@@ -4,11 +4,13 @@
 *.sqlite3
 # Name of your virtuan env
 *.vEnv
+.env
 venv
+/venv/
 # Python compiled files
 *pyc
 .DS_Store
 # pasta de mídias
 media
-/venv/
+
 
