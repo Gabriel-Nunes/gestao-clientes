@@ -1,8 +1,15 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block title %} Login {% endblock %}
+
+{% block main %}
 <h2>Login</h2>
     <form method="post">
         <!--    implementações de segurança do Django    -->
         {% csrf_token %}
         <!--    formulário de autenticação do Django, renderizado como parágrafo    -->
-        {{ form.as_p }}
-        <button type="submit">Login</button>
+        {{ form|bootstrap }}
+        <button type="submit" class="btn btn-primary">Login</button>
     </form>
+{% endblock %}

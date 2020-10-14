@@ -1,13 +1,8 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html'%}
+
+{% block title%}Confirm{% endblock %}
+
+{% block main %}
     <h1>Tem certeza que deseja deletar {{ person.first_name }}</h1>
 
     <form method="POST" enctype="multipart/form-data">
@@ -15,8 +10,8 @@
 
         <!-- o botão delete abaixo submete uma requisição tipo POST
         para a view 'persons_delete'-->
-        <button type="submit">Delete</button>
+        <button type="submit" class="btn btn-danger">Deletar</button>
+        <a href="{% url 'persons_update' person.id %}">Cancelar</a>
 
     </form>
-</body>
-</html>
+{% endblock %}
