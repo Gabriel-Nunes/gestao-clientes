@@ -28,7 +28,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
 # hosts list
-ALLOWED_HOSTS = ['gestao-clientes-gabriel.herokuapp.com']
+ALLOWED_HOSTS = ['gestao-clientes-gabriel.herokuapp.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrapform',
     'clientes',
     'home',
 ]
@@ -80,7 +81,9 @@ WSGI_APPLICATION = 'gestao_clientes.wsgi.application'
 
 default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 
-DATABASES = {'default': config('DATABASE_URL', default=default_dburl, cast=dburl),}
+DATABASES = {
+    'default': config('DATABASE_URL', default=default_dburl, cast=dburl),
+}
 
 # DATABASES = {
 #     'default': {
@@ -141,3 +144,7 @@ LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = 'persons_list'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_DIRS = [
+    'static',
+]
