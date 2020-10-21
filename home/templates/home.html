@@ -18,7 +18,7 @@
             <p>Olá {{ user.username }}</p>
             <a href="{% url 'logout' %}" class="btn btn-secondary">Sair</a> <!-- Apresenta o link para '/logout/' -->
         {% else  %}
-        <a href="{% url 'login'  %}" class="btn btn-primary">Entrar</a> <!-- Apresenta o link para '/login/'-->
+            <a href="{% url 'login'  %}" class="btn btn-primary">Entrar</a> <!-- Apresenta o link para '/login/'-->
         {% endif %}
 
     </div>
